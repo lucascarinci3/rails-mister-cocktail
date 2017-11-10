@@ -1,2 +1,43 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.vestocasa.it/wp-content/uploads/2017/05/bicchieri-cocktail-copertina-1.jpg');">
+  <div class="banner-content">
+    <h1>BartenderApp</h1>
+    <p>Create your cocktail list</p>
+    <a class="btn btn-primary btn-lg">Let's Start</a>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <h1>Cocktails</h1>
+    <div class="cards">
+
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+
+          <div class="card-category">Drink</div>
+
+          <div class="card-description">
+            <h2> <%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+          </div>
+
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          <a class="card-link" href="#" ></a>
+
+        </div>
+      </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+<%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+</div>
+</div>
+</div>
+
